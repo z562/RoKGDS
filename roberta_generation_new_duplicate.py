@@ -187,12 +187,6 @@ class TextDataset(Dataset):
                 segment = [[0] * len(history[0])]
                 sample['history'] = sample['history'][1:]
                 for _ in range(len(sample["history"])):
-                    # if _ % 2 == 1 - sample["Bot"]:
-                    #     sen_ids = [_ + 10] + self.sentence2id(sample["history"][_], is_last=int(_ == len(sample["history"])-1))
-                    #     if len(sen_ids) > 119:
-                    #         sen_ids = sen_ids[:119] + sen_ids[-1:]
-                    #     segment.append([2 - sample["Bot"]] * len(sen_ids))
-                    # else:
                     sen_ids = [_ + 10] + self.sentence2id(sample["history"][_], is_last=int(_ == len(sample["history"]) - 1))
                     if len(sen_ids) > 119:
                         sen_ids = sen_ids[:119] + sen_ids[-1:]
